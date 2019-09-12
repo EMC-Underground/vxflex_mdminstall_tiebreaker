@@ -1,0 +1,16 @@
+- name: "Copy RHEL 7 SIO Files"
+  copy:
+    src: ./files/
+    dest: /tmp/
+    owner: root
+    group: root
+    mode: 0644
+
+
+- name: "Install ScaleIO MDM set to TieBreaker"
+  yum:
+    name: '/tmp/EMC-ScaleIO-mdm-{{ vxflex_version }}.el7.x86_64.rpm'
+    state: present
+  environment:
+    MDM_ROLE_IS_MANAGER: 0
+
