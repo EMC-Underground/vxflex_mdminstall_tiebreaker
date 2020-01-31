@@ -5,7 +5,8 @@
     owner: root
     group: root
     mode: 0644
-
+  tags:
+    - install_mdm_tiebreaker
 
 - name: "Install ScaleIO MDM set to TieBreaker"
   yum:
@@ -13,4 +14,5 @@
     state: present
   environment:
     MDM_ROLE_IS_MANAGER: 0
-
+  tags:
+    - install_mdm_tiebreaker
